@@ -66,10 +66,6 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 - Use cv2.line to draw lines using the computed endpoint coordinates.
 
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
-![alt text][image1]
-
 
 ### 2. Identify potential shortcomings with your current pipeline
 
