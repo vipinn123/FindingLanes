@@ -15,7 +15,11 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[image1]: ./examples/image1.jpg "Grayscale"
+[image2]: ./examples/image2.jpg "Gaussian Blur"
+[image3]: ./examples/image3.jpg "Canny Edges"
+[image5]: ./examples/image5.jpg "Hough Transform"
+[image6]: ./examples/image6.jpg "Final Image"
 
 ---
 
@@ -31,6 +35,26 @@ My pipeline consisted of 5 steps.
 - Fourth, I identify the region of interest with some trial and error. this is the region with a high likely hood of containing the current lane.  This for me is in the range of [(480,310),(500, 310), (895,539), (80, 539)]
 - Fifth, I use Hough Trasform to detect lines with in the region of interest. The arguments used are rho = 1, theta = np.pi/180, 25, min_line_len = 5 & max_line_gap = 150
 - Sixth, I merge the orginal image with the image containing identified lane lines, to come up with a combined image
+
+The output corresponding to each step in the pipeline for the test file test_images/solidWhiteRight. is shown below
+
+#### Step-1
+![alt text][image1]
+
+#### Step-2
+![alt text][image2]
+
+#### Step-3
+![alt text][image3]
+
+#### Step-5
+![alt text][image5]
+
+#### Step-6
+![alt text][image6]
+
+
+
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() as follows:
 - Collect all the lines identified by Hough Transform on the region of interest
