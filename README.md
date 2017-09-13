@@ -19,7 +19,7 @@ In this project you will detect lane lines in images using Python and OpenCV.  O
 
 ### Outputs
 
-- The image & video outputs are in the test_images_output & test)videos_output respectively
+- The image & video outputs are in the test_images_output & test_videos_output respectively
 
 ### Code
 
