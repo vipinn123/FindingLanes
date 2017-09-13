@@ -1,12 +1,5 @@
 # **Finding Lane Lines on the Road** 
 
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
-
----
-
-**Finding Lane Lines on the Road**
 
 The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
@@ -27,7 +20,7 @@ The goals / steps of this project are the following:
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. 
+My pipeline consists of 6 steps. 
 
 - First, I converted the images to grayscale. This I did using the helper function grayscale(image).
 - Second, I did a Gaussian Blur with a kernel size of 5, using the helper function gaussian_blur(gray_image, kernel_size)
@@ -58,11 +51,11 @@ The output corresponding to each step in the pipeline for the test file test_ima
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() as follows:
 - Collect all the lines identified by Hough Transform on the region of interest
-- for each line for the Hough Transfrom identify the slope and intercept using the (x1,y1) - (x2,y2) pairs of the line
-- if the slope is less than zero, identify it as a line segment within the left lane. Else it is identified as part of the right lane
+- For each line for the Hough Transfrom identify the slope and intercept using the (x1,y1) - (x2,y2) pairs of the line
+- If the slope is less than zero, identify it as a line segment within the left lane. Else it is identified as part of the right lane
 - Find the average of slopes & intercepts collected for all the right line segments
 - Start of the lane marker will be at bottom of the image. The end of the lane marker will be at 75% of the image height. Fixing these will help determine the y coordinates for all our lane marker end points
-- We use the average slope, average intercept and the Y Coordinates, to compute the X-Coordinates of the lane marker end points
+- Use the average slope, average intercept and the Y Coordinates, to compute the X-Coordinates of the lane marker end points
 - Use cv2.line to draw lines using the computed endpoint coordinates.
 
 
